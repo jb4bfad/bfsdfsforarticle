@@ -2,7 +2,7 @@ import java.util.LinkedList;
 
 public class Dfs extends Graph{
 
-    public  Dfs(Node rootNode, LinkedList nodes) {
+    public  Dfs(Node rootNode, LinkedList nodes, int[][] adjMatrix, int size) {
 
         //DFS uses Stack data structure
         LinkedList s = new LinkedList();
@@ -10,12 +10,10 @@ public class Dfs extends Graph{
         rootNode.visited = true;
         printNode(rootNode);
         while (!s.isEmpty()) {
-           // System.out.print('\n');
-          //  Node child2 = (Node)nodes.get(2);
-         //   printNode(child2);
+
             Node n = (Node) s.peekLast();
 
-            Node child =  getUnvisitedChildNode(n);
+            Node child =  getUnvisitedChildNode(n, nodes, adjMatrix, size);
 
             if (child != null) {
 

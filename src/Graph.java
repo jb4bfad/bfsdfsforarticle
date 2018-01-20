@@ -36,16 +36,17 @@ public class Graph
 		adjMatrix[endIndex][startIndex]=1;
 	}
 
-	public Node getUnvisitedChildNode(Node n)
+	public Node getUnvisitedChildNode(Node n, LinkedList nodes, int[][] adjMatrix, int size)
 	{
 
 		int index=nodes.indexOf(n);
 		int j=0;
-		//System.out.print(nodes.size());
+		//System.out.println("\n["+size);
 		while(j<size)
 		{
+			//if(((Node)nodes.get(j)).visited==false) System.out.println("["+index+ "]");
 			if(adjMatrix[index][j]==1 && ((Node)nodes.get(j)).visited==false)
-			{// nie wchodzi tu
+			{
 				return (Node)nodes.get(j);
 			}
 			j++;
@@ -56,32 +57,13 @@ public class Graph
 	//BFS traversal of a tree is performed by the bfs() function
 	public void bfs()
 	{
-
-		//BFS uses Queue data structure
-        LinkedList q=new LinkedList();
-		q.add(this.rootNode);
-		printNode(this.rootNode);
-		rootNode.visited=true;
-		while(!q.isEmpty())
-		{
-
-			Node n=(Node)q.remove();
-			Node child=null;
-			while((child=getUnvisitedChildNode(n))!=null)
-			{
-				child.visited=true;
-				printNode(child);
-				q.add(child);
-			}
-		}
-		//Clear visited property of nodes
-		clearNodes();
+		Bfs d= new Bfs(rootNode, nodes, adjMatrix,size);
 	}
 
 	//DFS traversal of a tree is performed by the dfs() function
 	public void dfs()
 	{
-		Dfs d= new Dfs(rootNode, nodes);
+		Dfs d= new Dfs(rootNode, nodes, adjMatrix,size);
 
 	}
 
