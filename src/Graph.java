@@ -58,13 +58,14 @@ public class Graph
 	public void bfs()
 	{
 		Bfs d= new Bfs(rootNode, nodes, adjMatrix,size);
+		clearNodes();
 	}
 
 	//DFS traversal of a tree is performed by the dfs() function
 	public void dfs()
 	{
 		Dfs d= new Dfs(rootNode, nodes, adjMatrix,size);
-
+		clearNodes();
 	}
 
 

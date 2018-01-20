@@ -29,15 +29,15 @@ public class Main {
 		g.connectNode(nB,nE);
 		g.connectNode(nB,nF);
 		g.connectNode(nC,nF);
-		
-		
+
+
 		//Perform the traversal of the graph
 		System.out.println("DFS Traversal of a tree is ------------->");
 		g.dfs();
 		
 		System.out.println("\nBFS Traversal of a tree is ------------->");
 		g.bfs();
-		
+
 		
 		
 		

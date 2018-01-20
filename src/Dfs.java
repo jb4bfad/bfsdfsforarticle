@@ -1,7 +1,7 @@
 import java.util.LinkedList;
 
 public class Dfs extends Graph{
-
+    Graph graph;
     public  Dfs(Node rootNode, LinkedList nodes, int[][] adjMatrix, int size) {
 
         //DFS uses Stack data structure
@@ -25,6 +25,6 @@ public class Dfs extends Graph{
             }
         }
         //Clear visited property of nodes
-        clearNodes();
+
     }
 }

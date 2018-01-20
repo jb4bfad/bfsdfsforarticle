@@ -1,6 +1,7 @@
 import java.util.LinkedList;
 
 public class Bfs extends Graph{
+    Graph graph;
     public  Bfs(Node rootNode, LinkedList nodes, int[][] adjMatrix, int size)
     {
         LinkedList q=new LinkedList();
@@ -24,6 +25,6 @@ public class Bfs extends Graph{
             }
         }
         //Clear visited property of nodes
-        clearNodes();
+
     }
 }
